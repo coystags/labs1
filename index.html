@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Cooke Labs</title>
+
+<style>
+body {
+    background: #f8f8f8;
+    color: #111;
+    font-family: Georgia, serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 10vh auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: .2rem;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.links {
+    margin: 2rem 0;
+}
+
+.links a {
+    display: inline-block;
+    margin: .5rem;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px dotted #888;
+}
+
+.links a:hover {
+    border-bottom-style: solid;
+}
+
+.divider {
+    margin: 2rem auto;
+    width: 100px;
+    border-top: 1px solid #bbb;
+}
+
+.footer {
+    color: #666;
+    font-size: .85rem;
+}
+
+.counter {
+    margin-top: 1rem;
+    font-family: monospace;
+    background: black;
+    color: #00ff66;
+    display: inline-block;
+    padding: .25rem .6rem;
+    letter-spacing: 2px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Cooke Labs</h1>
+
+<div class="subtitle">
+Experiments · Projects · Art · Curiosity
+</div>
+
+<p>
+Welcome to my corner of the internet.
+</p>
+
+<p>
+This site is currently under construction while I build out
+experiments, project logs, artwork, and assorted things that seemed
+like a good idea at the time.
+</p>
+
+<div class="links">
+<a href="#">Projects</a>
+<a href="#">Experiments</a>
+<a href="#">Art</a>
+<a href="#">About</a>
+</div>
+
+<div class="divider"></div>
+
+<div class="footer">
+Established 2026
+<br>
+
+<div class="counter">
+Visitors:
+<span id="hits">000001</span>
+</div>
+
+</div>
+
+</div>
+
+<script>
+let visits = localStorage.getItem("cookelabs_hits");
+
+if (!visits) {
+    visits = 1;
+} else {
+    visits = Number(visits) + 1;
+}
+
+localStorage.setItem("cookelabs_hits", visits);
+
+document.getElementById("hits")
+.textContent =
+String(visits).padStart(6, "0");
+</script>
+
+</body>
+</html>
